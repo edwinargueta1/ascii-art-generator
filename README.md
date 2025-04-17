@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# ASCII Art Generator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Turn your images into stylized text — all in your browser.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## How It Works
 
-### `npm start`
+### Upload an Image
+- Drag and drop a `.png` or `.jpeg` image into the app  
+- Or click the upload area to browse your device  
+- Your image is processed **entirely in the browser** — never sent to a server
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### View Instant ASCII Art
+- Your image is rendered in ASCII art form using a default character set  
+- Output appears immediately on screen
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Adjust Detail
+- Use the **detail control** to fine-tune the visual fidelity:
+  - `1x` for **high detail** (sharp representation)
+  - `128x` for **low detail** (more abstract, stylized view)
+- The image re-renders instantly when you adjust this setting
 
-### `npm test`
+### Customize Character Mapping
+- Choose from **built-in presets**
+- Or enter your own custom character set
+- Characters are mapped from **dark to light**:
+  - First characters = **darkest pixels**
+  - Last characters = **brightest pixels**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Copy to Clipboard
+- A "Copy" button appears with every render
+- Click it to copy the full ASCII art to your clipboard (formatting preserved)
+- Paste into any text editor, comment, or code block
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+✨ Enjoy turning your images into ASCII magic! ✨

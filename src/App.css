@@ -1,26 +1,310 @@
 /* App.css */
+@font-face {
+  font-family: "ShareTech";
+  src: url("/src/Assets/Fonts/ShareTech/ShareTechMono-Regular.ttf");
+}
 
-:root{
+:root {
   /* COLORS */
-  --textColor:rgb(200, 200, 200);
-  --backgroudColor: rgb(30,30,30);
+  --textColor: rgb(200, 200, 200);
+  --textBackgroundColor: rgb(110, 110, 110);
+  --placeHolderColor: rgb(135, 135, 135);
+  --backgroudColor: rgb(30, 30, 30);
+  --buttonBackground: rgba(255, 255, 255, 0.05);
+  --highlight: rgba(255, 255, 255, 0.1);
+  --highlightDarker: rgba(255, 255, 255, 0.05);
+  --footerBackgroundColor: rgba(0, 0, 0, 0.4);
+  --notificationBGSuccess: rgb(23, 47, 25);
+  --notificationBGError: rgb(47, 23, 23);
 
   background-color: var(--backgroudColor);
   color: var(--textColor);
 }
 
+/* DEFAULTS */
+h2{
+  padding-bottom: 0rem;
+  margin-bottom: 0rem;
+}
+label{
+  font-weight: bold;
+}
+select {
+  background-color: var(--buttonBackground);
+  color: var(--textColor);
+  border: none;
+  border-radius: 1rem;
+  padding: 0.3rem;
+  padding-left: 0.6rem;
+  padding-right: 0.6rem;
+  margin: 0.2rem;
+}
+
+select:hover {
+  cursor: pointer;
+  background-color: var(--highlight);
+}
+
+option {
+  color: black;
+}
+
+input {
+  color: var(--textColor);
+  background-color: var(--buttonBackground);
+  border: none;
+  border-radius: 1rem;
+  padding: 0.3rem;
+  padding-left: 0.6rem;
+  padding-right: 0.6rem;
+  margin: 0.2rem;
+  outline: none;
+}
+
+input::placeholder {
+  color: var(--placeHolderColor);
+  font-style: italic;
+}
+
+button {
+  background-color: var(--buttonBackground);
+  color: var(--textColor);
+  border: none;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  margin: 0.2rem;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: var(--highlight);
+}
+
+footer {
+  background-color: var(--footerBackgroundColor);
+  box-sizing: border-box;
+  bottom: 0;
+  width: 100%;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+footer p {
+  padding: 0;
+  margin: 0;
+  color: var(--textBackgroundColor);
+  font-family: "ShareTech", Arial, Helvetica, sans-serif;
+  font-weight: 100;
+  letter-spacing: -1px;
+  word-spacing: -2px;
+}
+
+ul {
+  list-style-type: none;
+  text-align: left;
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+ul.dotted {
+  list-style-type: disc;
+}
+div.leftBorder{
+  border-left: solid var(--textBackgroundColor) 0.2rem;
+  padding-left: 1.5rem;
+  box-sizing: border-box;
+  color: var(--textBackgroundColor);
+}
+div.closeButton{
+  height: 1rem;
+  width: 100%;
+  align-items: end;
+}
+
 .App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  min-height: 100vh;
+  width: 100vw;
   text-align: center;
-  margin-top: 5rem;
-  margin-bottom: 5rem;
 }
-.asciiImage{
-  font-size: 8px;
+
+.image-to-ascii {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-#photoView{
+
+.fileDropper {
+  border: dashed 0.2rem var(--textColor);
+  background: var(--highlight);
+  animation: breathingBackground 3s ease-in-out alternate;
+  cursor: pointer;
+  width: 30rem;
+  margin: 1rem;
+  padding: 0.25rem;
+  border-radius: 1rem;
+}
+
+footer .footerButton {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  transition: 300ms;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+footer .footerButton:hover {
+  background-color: var(--highlight);
+  cursor: pointer;
+}
+
+footer .footerButton p {
+  transition: inherit;
+}
+
+footer .footerButton:hover p {
+  color: var(--textColor);
+}
+
+.infoWindowWrapper {
+  z-index: 3;
+  height: 100vh;
+  width: 100vw;
+  backdrop-filter: blur(0.5rem);
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.373);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 500ms;
+  box-sizing: border-box;
+}
+
+
+.infoWindow {
+  background-color: var(--backgroudColor);
+  color: var(--textColor);
+  box-shadow: 0rem 0.2rem 1rem rgba(0, 0, 0, 0.316);
+  transform: inherit;
+  box-sizing: border-box;
+  padding: 2rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  width: 35rem;
+  max-height: 70vh;
+  scroll-behavior: smooth;
+  overflow: scroll;
+}
+
+.infoWindow p {
+  padding: 0.2rem;
+  margin: 0;
+}
+.infoWindow .closeSection{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+.infoWindow .closeSection #close{
+  width: 1.5rem;
+  height: 1.5rem;
+
+}
+.infoWindow .closeSection #close:hover{
+  color: white;
+  background-color: red;
+  cursor: pointer;
+}
+
+#photoView {
   max-width: 30rem;
   max-height: 30rem;
 }
-.hidden{
+#clipboardButton{
+  padding: 1rem;
+  border-radius: 2rem;
+  transition: 0.2s;
+}
+#clipboardButton:active{
+  scale: 0.9;
+}
+
+.controls{
+  padding: 1rem;
+}
+
+.hidden {
   display: none;
+}
+
+span.bold{
+  font-weight: bold;
+}
+span.bubble{
+  padding: 0.25rem;
+  margin: 21rem;
+  padding-top: 0rem;
+  background-color: var(--highlight);
+  color: var(--textColor);
+  border-radius: 0.5rem;
+  margin: auto;
+}
+.notification{
+  position: fixed;
+  right: 20px;
+  bottom: -200px;
+  padding: 10px 20px;
+  background-color: var(--highlight);
+  border-radius: 8px;
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(.54,.18,.31,.83);
+  z-index: 9999;
+  text-align: left;
+}
+.notification.info {
+  bottom: 40px; 
+  opacity: 1;
+}
+.notification.success {
+  background-color: var(--notificationBGSuccess);
+  bottom: 40px; 
+  opacity: 1;
+}
+.notification.error {
+  background-color: var(--notificationBGError);
+  bottom: 40px; 
+  opacity: 1;
+}
+.notification h4{
+  color: var(--textColor);
+}
+.notification p{
+  color: var(--textBackgroundColor);
+  font-style: italic;
+  size: 0.5rem;
+}
+
+/* ANIMATIONS */
+@keyframes breathingBackground {
+  0% {
+    background-color: var(--highlight);
+  }
+
+  50% {
+    background-color: var(--highlightDarker);
+  }
+
+  100% {
+    background-color: var(--highlight);
+  }
 }
